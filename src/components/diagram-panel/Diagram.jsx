@@ -4,7 +4,7 @@ import * as RJD from '../../../lib/main';
 import _ from 'lodash';
 
 import { engine } from './engine';
-import { ImageNodeModel } from '../nodes/imagenode/ImageNodeModel';
+import { PredefinedNodeModel } from '../nodes/predefinednode/PredefinedNodeModel';
 
 
 // Setup the diagram model
@@ -23,7 +23,7 @@ const target = {
 
         // New node type
         if (item.type === 'rds') {
-            node = new ImageNodeModel('RDS Node', 'rgb(124, 28, 120)', {
+            node = new PredefinedNodeModel('RDS Node', 'rgba(0, 0, 0, 0)', {
                 title: 'RDS',
                 body: '',
                 video: {
@@ -42,7 +42,7 @@ const target = {
 
         // New node type
         if (item.type === 'ec2') {
-            node = new ImageNodeModel('EC2 Node', 'rgb(124, 28, 120)', {
+            node = new PredefinedNodeModel('EC2 Node', 'rgba(0, 0, 0, 0)', {
                 title: 'EC2',
                 body: '',
                 video: {
@@ -61,7 +61,7 @@ const target = {
 
         // New node type
         if (item.type === 'elb') {
-            node = new ImageNodeModel('ELB Node', 'rgb(124, 28, 120)', {
+            node = new PredefinedNodeModel('ELB Node', 'rgba(0, 0, 0, 0)', {
                 title: 'Elastic Load Balancing',
                 body: '',
                 video: {

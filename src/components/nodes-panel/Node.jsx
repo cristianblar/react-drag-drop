@@ -1,16 +1,15 @@
 import React from 'react';
 import DragWrapper from './DragWrapper';
-import { ImageNodeWidget } from '../nodes/imagenode/ImageNodeWidget';
+import { PredefinedNodeWidget } from '../nodes/predefinednode/PredefinedNodeWidget';
 
 class Node extends React.Component {
     renderNode() {
-        const { type, color } = this.props;
+        const { type } = this.props;
 
         if (type === 'rds') {
             return (
-                <ImageNodeWidget
+                <PredefinedNodeWidget
                 node={{ name: 'RDS node' }}
-                color={color}
                 displayOnly
                 title="RDS"
                 image="https://res.cloudinary.com/cristianblar/image/upload/v1628777084/Treble/RDS_dlhh90.png"
@@ -21,9 +20,8 @@ class Node extends React.Component {
 
         if (type === 'ec2') {
             return (
-                <ImageNodeWidget
+                <PredefinedNodeWidget
                 node={{ name: 'EC2 node' }}
-                color={color}
                 displayOnly
                 title="EC2"
                 image="https://res.cloudinary.com/cristianblar/image/upload/v1628777084/Treble/EC2_khal3y.png"
@@ -34,9 +32,8 @@ class Node extends React.Component {
 
         if (type === 'elb') {
             return (
-                <ImageNodeWidget
+                <PredefinedNodeWidget
                 node={{ name: 'ELB node' }}
-                color={color}
                 displayOnly
                 title="Elastic Load Balancing"
                 image="https://res.cloudinary.com/cristianblar/image/upload/v1628777084/Treble/ELB_zleeyw.png"

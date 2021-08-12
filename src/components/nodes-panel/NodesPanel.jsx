@@ -9,11 +9,10 @@ class NodesPanel extends React.Component {
                     <h2>Nodes</h2>
                     <div className='title-separator' />
                     <div className='node-wrapper'>
-                        <Node type='rds' color='rgb(238, 238, 238)'/>
-                        <Node type='ec2' color='rgb(238, 238, 238)'/>
-                        <Node type='elb' color='rgb(238, 238, 238)'/>
+                        <Node type='rds' />
+                        <Node type='ec2' />
+                        <Node type='elb' />
                     </div>
-                    {/* Other nodes */}
                 </div>
             </div>
         );

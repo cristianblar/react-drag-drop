@@ -355,7 +355,7 @@
     width: min-content;
 
     .basic-node {
-      width: 120px;
+      width: 150px;
     }
   }
 
@@ -400,19 +400,23 @@
 }
 
 .basic-node {
+  // No border nor box-shadow needed for new design
   background-color: rgb(30,30,30);
-  border-radius: 5px;
-  font-family: 'Roboto', sans-serif;
   color: white;
-  border: solid 2px black;
-  overflow: visible;
+  font-family: 'Roboto', sans-serif;
   font-size: 12px;
-  box-shadow: 0 0 10px rgba(black,0.5);
-  width: 120px;
+  margin-bottom: 30px;
+  overflow: visible;
+  width: 150px;
 
   .title{
-    background: rgba(black,0.3);
+    // No background needed for new design
     display: flex;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 21px;
+    position: relative;
+    text-align: center;
     white-space: nowrap;
     >*{
       align-self: center;
@@ -421,6 +425,8 @@
     .fa{
       padding: 5px;
       opacity: 0.2;
+      position: absolute;
+      right: 0;
       cursor: pointer;
 
       &:hover{
@@ -436,8 +442,10 @@
   }
 
   .ports{
+    // No background needed for new design
+    align-items: center;
     display: flex;
-    background-image: linear-gradient(rgba(black,0.1),rgba(black,0.2));
+    justify-content: center;
     padding: 5px;
 
     .in, .out{
@@ -453,7 +461,8 @@
         align-self: center;
       }
       .name{
-        padding: 0 5px;
+        // New design doesn't have port labels
+        display: none;
       }
     }
 

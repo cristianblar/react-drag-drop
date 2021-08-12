@@ -1,11 +1,11 @@
 import React from 'react';
 import * as RJD from '../../../../lib/main';
-import { ImageNodeModel } from './ImageNodeModel';
+import { PredefinedNodeModel } from './PredefinedNodeModel';
 
-export class ImageNodeWidget extends React.Component {
+export class PredefinedNodeWidget extends React.Component {
   static defaultProps = {
     node: null,
-    color: 'rgb(224, 98, 20)'
+    color: 'rgb(32, 32, 32)'
   };
 
   onRemove() {
@@ -19,7 +19,7 @@ export class ImageNodeWidget extends React.Component {
     let inputNode = node;
 
     if (displayOnly) {
-      inputNode = new ImageNodeModel(node.name, color);
+      inputNode = new PredefinedNodeModel(node.name, color);
     }
 
     return inputNode.getInPort ? <RJD.DefaultPortLabel model={inputNode.getInPort()} key='in-port' /> : null;
@@ -30,7 +30,7 @@ export class ImageNodeWidget extends React.Component {
     let outputNode = node;
 
     if (displayOnly) {
-      outputNode = new ImageNodeModel(node.name, color);
+      outputNode = new PredefinedNodeModel(node.name, color);
     }
 
     return outputNode.getOutPort ? <RJD.DefaultPortLabel model={outputNode.getOutPort()} key='out-port' /> : null;
@@ -46,7 +46,7 @@ export class ImageNodeWidget extends React.Component {
       image,
       imageAlt,
     } = this.props;
-    const { name, color, content } = node;
+    const { color, content } = node;
     const style = {};
     if (color || displayColor) {
       style.background = color || displayColor;
@@ -73,4 +73,4 @@ export class ImageNodeWidget extends React.Component {
   }
 }
 
-export const ImageNodeWidgetFactory = React.createFactory(ImageNodeWidget);
+export const PredefinedNodeWidgetFactory = React.createFactory(PredefinedNodeWidget);
