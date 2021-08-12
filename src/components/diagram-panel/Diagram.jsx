@@ -21,16 +21,55 @@ const target = {
 
         let node;
 
-        if (item.type === 'imagenode') {
-            node = new ImageNodeModel('Image Node', 'rgb(124, 28, 120)', {
-                title: '',
+        // New node type
+        if (item.type === 'rds') {
+            node = new ImageNodeModel('RDS Node', 'rgb(124, 28, 120)', {
+                title: 'RDS',
                 body: '',
                 video: {
                     url: ''
                 },
                 image: {
-                    src: '',
-                    alt: ''
+                    src: 'https://res.cloudinary.com/cristianblar/image/upload/v1628777084/Treble/RDS_dlhh90.png',
+                    alt: 'RDS Logo'
+                },
+                info: {
+                    title: '',
+                    body: ''
+                }
+            });
+        }
+
+        // New node type
+        if (item.type === 'ec2') {
+            node = new ImageNodeModel('EC2 Node', 'rgb(124, 28, 120)', {
+                title: 'EC2',
+                body: '',
+                video: {
+                    url: ''
+                },
+                image: {
+                    src: 'https://res.cloudinary.com/cristianblar/image/upload/v1628777084/Treble/EC2_khal3y.png',
+                    alt: 'EC2 Logo'
+                },
+                info: {
+                    title: '',
+                    body: ''
+                }
+            });
+        }
+
+        // New node type
+        if (item.type === 'elb') {
+            node = new ImageNodeModel('ELB Node', 'rgb(124, 28, 120)', {
+                title: 'Elastic Load Balancing',
+                body: '',
+                video: {
+                    url: ''
+                },
+                image: {
+                    src: 'https://res.cloudinary.com/cristianblar/image/upload/v1628777084/Treble/ELB_zleeyw.png',
+                    alt: 'ELB Logo'
                 },
                 info: {
                     title: '',

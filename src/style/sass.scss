@@ -4,22 +4,12 @@
   display: flex;
   cursor: move;
   overflow: hidden;
-  background-color: #fff !important;
-  background-size: 50px 50px;
-  background-image:
-          linear-gradient(0deg, transparent 24%, rgba(100, 100, 100, 0.05) 25%,
-          rgba(100, 100, 100, 0.05) 26%, transparent 27%, transparent 74%,
-          rgba(100, 100, 100, 0.05) 75%, rgba(100, 100, 100, 0.05) 76%,
-          transparent 77%, transparent),
-          linear-gradient(90deg, transparent 24%, rgba(100, 100, 100, 0.05) 25%,
-          rgba(100, 100, 100, 0.05) 26%, transparent 27%, transparent 74%,
-          rgba(100, 100, 100, 0.05) 75%,
-          rgba(100, 100, 100, 0.05) 76%, transparent 77%, transparent);
+  // New design doesn't require grid background
 
   .point {
     fill: rgba(white,0.5);
     &.selected {
-      fill: rgb(0,192,255);
+      fill: white; // Fixed for new design
     }
   }
 
@@ -78,7 +68,8 @@
     pointer-events:all;
 
     &.selected {
-      stroke: rgb(0,192,255) !important;
+      // Fixed stroke color for new design
+      stroke: var(--lt-color-gray-400) !important;
       stroke-dasharray: 10,2;
       animation: dash 1s linear infinite;
     }
@@ -96,7 +87,7 @@
   .basic-node {
     background-color: rgb(30,30,30);
     border-radius: 5px;
-    font-family:Arial;
+    font-family: 'Roboto', sans-serif;
     color: white;
     border: solid 2px black;
     overflow: visible;

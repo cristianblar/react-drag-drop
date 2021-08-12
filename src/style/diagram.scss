@@ -51,7 +51,7 @@
   flex-direction: column;
   background-color: transparent;
   transition:all 500ms ease;
-  height: 92vh;
+  height: 100vh; // New design covers the viewport height
 
   .diagram {
     flex: 1.2;
@@ -177,7 +177,7 @@
     }
 
     button {
-      font-family: 'Lato';
+      font-family: 'Roboto', sans-serif;
       font-size: 0.8rem;
       padding: 2px 7px;
       margin: 0 1px 0 0;
@@ -346,14 +346,36 @@
 .nodes-panel {
   flex-direction: column;
   background-color: transparent;
-  padding: 1.5rem;
+  // Horizontal padding not necessary
+  padding: 54px 0 0;
 
   .node-wrapper {
-    margin-bottom: 1rem;
+    // Centers the node on the panel
+    margin: 0 auto 1rem;
+    width: min-content;
 
     .basic-node {
       width: 120px;
     }
+  }
+
+  // Add styles for new panel title
+  h2 {
+    color: white;
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 56px;
+    margin: 0 0 54px;
+    text-align: center;
+    width: 100%;
+  }
+
+  // Add styles for title <> nodes separator
+  .title-separator {
+    border-bottom: 1px solid #EDEDED;
+    margin: 0 auto 62px;
+    max-width: 154px;
+    width: 100%;
   }
 }
 
@@ -380,7 +402,7 @@
 .basic-node {
   background-color: rgb(30,30,30);
   border-radius: 5px;
-  font-family:Arial;
+  font-family: 'Roboto', sans-serif;
   color: white;
   border: solid 2px black;
   overflow: visible;

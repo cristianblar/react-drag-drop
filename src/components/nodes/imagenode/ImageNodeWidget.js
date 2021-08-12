@@ -37,28 +37,36 @@ export class ImageNodeWidget extends React.Component {
   }
 
   render() {
-    const { node, displayOnly, color: displayColor } = this.props;
-    const { name, color } = node;
+    // displayOnly, title, image & imageAlt are for NodesPanel only
+    const {
+      node,
+      displayOnly,
+      color: displayColor,
+      title,
+      image,
+      imageAlt,
+    } = this.props;
+    const { name, color, content } = node;
     const style = {};
     if (color || displayColor) {
       style.background = color || displayColor;
     }
 
     return (
-      <div className='basic-node' style={style}>
-        <div className='title'>
-          <div className='name'>
-            image
-          </div>
-          {!displayOnly ? <div className='fa fa-close' onClick={this.onRemove.bind(this)} /> : null}
+      <div className="basic-node" style={style}>
+        <div className="ports">
+          {!displayOnly && <div className="in">{this.getInPort()}</div>}
+          <img
+            src={image ? image : content.image.src}
+            alt={imageAlt ? imageAlt : content.image.alt}
+          />
+          {!displayOnly && <div className="out">{this.getOutPort()}</div>}
         </div>
-        <div className='ports'>
-          <div className='in'>
-            {this.getInPort()}
-          </div>
-          <div className='out'>
-            {this.getOutPort()}
-          </div>
+        <div className="title">
+          <div className="name">{title ? title : content.title}</div>
+          {!displayOnly ? (
+            <div className="fa fa-close" onClick={this.onRemove.bind(this)} />
+          ) : null}
         </div>
       </div>
     );

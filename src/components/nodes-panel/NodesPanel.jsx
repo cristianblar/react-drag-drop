@@ -6,8 +6,12 @@ class NodesPanel extends React.Component {
         return (
             <div className="panel-wrapper">
                 <div className="nodes-panel">
+                    <h2>Nodes</h2>
+                    <div className='title-separator' />
                     <div className='node-wrapper'>
-                        <Node type='imagenode' color='rgb(238, 238, 238)'/>
+                        <Node type='rds' color='rgb(238, 238, 238)'/>
+                        <Node type='ec2' color='rgb(238, 238, 238)'/>
+                        <Node type='elb' color='rgb(238, 238, 238)'/>
                     </div>
                     {/* Other nodes */}
                 </div>
