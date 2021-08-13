@@ -2,7 +2,7 @@
 
 ## New version released 🚀
 
-Check out more details **[here](https://www.notion.so/cristianblandon/treble-ai-tech-test-e99823a9abd54c2b91f13098275eac00)**!
+Check out more details **[here](https://cristianblandon.notion.site/cristianblandon/treble-ai-tech-test-e99823a9abd54c2b91f13098275eac00)**!
 
 ## Features
 
