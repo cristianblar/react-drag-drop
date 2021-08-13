@@ -54,18 +54,22 @@ export class TextNodeWidget extends React.Component {
     const { textContent } = node;
 
     return (
-      <div className="basic-node">
+      <div className="basic-node text">
         <div className="ports">
           {!displayOnly && <div className="in">{this.getInPort()}</div>}
           {
             displayOnly ? (
-              <h2>{title}</h2>
+              <h2 className="text-title">{title}</h2>
             ) : (
-              <input
-                type="text"
+              <textarea
+                spellCheck="false"
+                data-gramm_editor="false"
+                data-lt="false"
+                rows={2}
                 value={this.state.text}
+                onFocus={ev => ev.target.select()}
                 onChange={this.onTextChange.bind(this)}
-              ></input>
+              ></textarea>
             )
           }
           {!displayOnly && <div className="out">{this.getOutPort()}</div>}

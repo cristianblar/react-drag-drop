@@ -141,4 +141,36 @@
       }
     }
   }
+
+  .basic-node.text {
+    background: transparent;
+    padding: 36px 18px;
+    width: 240px;
+
+    & textarea {
+      background: transparent;
+      border: none;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-size: 36px;
+      font-weight: 300;
+      height: auto;
+      padding: 0 8px;
+      resize: none;
+      text-align: center;
+      width: 100%;
+      word-wrap: break-word;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    & .title .fa-close {
+      bottom: -30px;
+      right: -12px;
+    }
+
+  }
+
 }
