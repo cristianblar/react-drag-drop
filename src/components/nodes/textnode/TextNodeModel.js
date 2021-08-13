@@ -10,6 +10,10 @@ export class TextNodeModel extends RJD.NodeModel {
     this.textContent = textContent;
   }
 
+  updateText(newText) {
+    this.textContent = newText;
+  }
+
   deSerialize(object) {
     super.deSerialize(object);
     this.name = object.name;

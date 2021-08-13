@@ -12,6 +12,7 @@ class NodesPanel extends React.Component {
                         <Node type='rds' />
                         <Node type='ec2' />
                         <Node type='elb' />
+                        <Node type='text' />
                     </div>
                 </div>
             </div>

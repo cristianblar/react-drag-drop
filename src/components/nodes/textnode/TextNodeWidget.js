@@ -7,6 +7,19 @@ export class TextNodeWidget extends React.Component {
     node: null,
   };
 
+  // Local state for widget text
+  state = {
+    text: this.props.node.textContent
+  };
+
+  onTextChange(ev) {
+    const { node, diagramEngine } = this.props;
+    this.setState({ text: ev.target.value }, () => {
+      node.updateText(this.state.text);
+      diagramEngine.forceUpdate();
+    });
+  }
+
   onRemove() {
     const { node, diagramEngine } = this.props;
     node.remove();
@@ -44,7 +57,17 @@ export class TextNodeWidget extends React.Component {
       <div className="basic-node">
         <div className="ports">
           {!displayOnly && <div className="in">{this.getInPort()}</div>}
-          {displayOnly ? <h2>{title}</h2> : <p>Future input!</p>}
+          {
+            displayOnly ? (
+              <h2>{title}</h2>
+            ) : (
+              <input
+                type="text"
+                value={this.state.text}
+                onChange={this.onTextChange.bind(this)}
+              ></input>
+            )
+          }
           {!displayOnly && <div className="out">{this.getOutPort()}</div>}
         </div>
         <div className="title">

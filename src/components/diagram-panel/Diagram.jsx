@@ -5,6 +5,7 @@ import _ from 'lodash';
 
 import { engine } from './engine';
 import { PredefinedNodeModel } from '../nodes/predefinednode/PredefinedNodeModel';
+import { TextNodeModel } from '../nodes/textnode/TextNodeModel';
 
 
 // Setup the diagram model
@@ -21,61 +22,62 @@ const target = {
 
         let node;
 
-        // New node type
-        if (item.type === 'rds') {
-            node = new PredefinedNodeModel('RDS Node', 'rgba(0, 0, 0, 0)', {
-                title: 'RDS',
-                body: '',
-                video: {
-                    url: ''
-                },
-                image: {
-                    src: 'https://res.cloudinary.com/cristianblar/image/upload/v1628777084/Treble/RDS_dlhh90.png',
-                    alt: 'RDS Logo'
-                },
-                info: {
-                    title: '',
-                    body: ''
-                }
-            });
-        }
-
-        // New node type
-        if (item.type === 'ec2') {
-            node = new PredefinedNodeModel('EC2 Node', 'rgba(0, 0, 0, 0)', {
-                title: 'EC2',
-                body: '',
-                video: {
-                    url: ''
-                },
-                image: {
-                    src: 'https://res.cloudinary.com/cristianblar/image/upload/v1628777084/Treble/EC2_khal3y.png',
-                    alt: 'EC2 Logo'
-                },
-                info: {
-                    title: '',
-                    body: ''
-                }
-            });
-        }
-
-        // New node type
-        if (item.type === 'elb') {
-            node = new PredefinedNodeModel('ELB Node', 'rgba(0, 0, 0, 0)', {
-                title: 'Elastic Load Balancing',
-                body: '',
-                video: {
-                    url: ''
-                },
-                image: {
-                    src: 'https://res.cloudinary.com/cristianblar/image/upload/v1628777084/Treble/ELB_zleeyw.png',
-                    alt: 'ELB Logo'
-                },
-                info: {
-                    title: '',
-                    body: ''
-                }
-            });
+        // New node types!
+        switch (item.type) {
+            case 'rds':
+                node = new PredefinedNodeModel('RDS Node', 'rgba(0, 0, 0, 0)', {
+                    title: 'RDS',
+                    body: '',
+                    video: {
+                        url: ''
+                    },
+                    image: {
+                        src: 'https://res.cloudinary.com/cristianblar/image/upload/v1628777084/Treble/RDS_dlhh90.png',
+                        alt: 'RDS Logo'
+                    },
+                    info: {
+                        title: '',
+                        body: ''
+                    }
+                });
+                break;
+            case 'ec2':
+                node = new PredefinedNodeModel('EC2 Node', 'rgba(0, 0, 0, 0)', {
+                    title: 'EC2',
+                    body: '',
+                    video: {
+                        url: ''
+                    },
+                    image: {
+                        src: 'https://res.cloudinary.com/cristianblar/image/upload/v1628777084/Treble/EC2_khal3y.png',
+                        alt: 'EC2 Logo'
+                    },
+                    info: {
+                        title: '',
+                        body: ''
+                    }
+                });
+                break;
+            case 'elb':
+                node = new PredefinedNodeModel('ELB Node', 'rgba(0, 0, 0, 0)', {
+                    title: 'Elastic Load Balancing',
+                    body: '',
+                    video: {
+                        url: ''
+                    },
+                    image: {
+                        src: 'https://res.cloudinary.com/cristianblar/image/upload/v1628777084/Treble/ELB_zleeyw.png',
+                        alt: 'ELB Logo'
+                    },
+                    info: {
+                        title: '',
+                        body: ''
+                    }
+                });
+                break;
+            case 'text':
+                node = new TextNodeModel('Text Node', 'Some text');
+                break;
         }
 
         node.x = x;
